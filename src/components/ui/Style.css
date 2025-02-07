@@ -324,4 +324,23 @@
 .btn-home:hover {
   background-color: #000;
   color: #fff;
+}
+
+@media only screen and (max-width: 1249px) {
+  .home-card-container {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1133px) {
+  .home-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+@media only screen and (max-width: 740px) {
+  .home-card {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=Style.css.map */
