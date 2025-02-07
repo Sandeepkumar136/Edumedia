@@ -7,6 +7,7 @@ import Authors from './components/pages/Authors';
 import Categories from './components/pages/Categories';
 import Bookmarks from './components/pages/Bookmarks';
 import Trending from './components/pages/Trending';
+import BooksDetails from './components/contents/Home/BooksDetails';
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
         <Route path='/categories' element={<Categories/>} />
         <Route path='/bookmarks' element={<Bookmarks/>} />
         <Route path='/trends' element={<Trending/>} />
-        
+        <Route path='/book/:id' element={<BooksDetails/>} />
       </Routes>
     </Router>
   )
