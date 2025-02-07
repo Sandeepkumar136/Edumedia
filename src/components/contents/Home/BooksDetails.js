@@ -7,7 +7,8 @@ const BookDetails = () => {
   const [book, setBook] = useState(null);
 
   useEffect(() => {
-    axios.get(`https://openlibrary.org/works/${id}.json`)
+    axios
+      .get(`https://openlibrary.org/works/${id}.json`)
       .then((response) => setBook(response.data))
       .catch((error) => console.error(error));
   }, [id]);
@@ -22,11 +23,27 @@ const BookDetails = () => {
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
+      <div className="bd-img-contain">
+        <img
+          src={coverUrl}
+          alt={book.title}
+          style={{ width: "200px", height: "300px" }}
+        />
+      </div>
       <h1>{book.title}</h1>
-      <img src={coverUrl} alt={book.title} style={{ width: "200px", height: "300px" }} />
-      <p><strong>Description:</strong> {book.description?.value || "No description available"}</p>
-      <p><strong>Subjects:</strong> {book.subjects?.join(", ") || "Unknown"}</p>
-      <a href={readableLink} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "blue", fontSize: "18px" }}>
+      <p>
+        <strong>Description:</strong>{" "}
+        {book.description?.value || "No description available"}
+      </p>
+      <p>
+        <strong>Subjects:</strong> {book.subjects?.join(", ") || "Unknown"}
+      </p>
+      <a
+        href={readableLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: "none", color: "blue", fontSize: "18px" }}
+      >
         📖 Read Now
       </a>
     </div>

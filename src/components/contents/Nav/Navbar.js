@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ImageProvider from '../../assets/ImageProvider';
 import { Link } from 'react-router-dom';
+import SearchContext from '../../context/SearchContext';
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const {setShowSearch} = useContext(SearchContext);
     const ToggleSidebar = ()=>{
         setIsSidebarOpen(!isSidebarOpen)
     }
@@ -15,7 +17,7 @@ const Navbar = () => {
                 <h5 className='logo-text' >Edumedia</h5>
             </Link>
             <ul className="nav-content">
-                <li className="nav-item"><i className="bx bx-search"></i></li>
+                <li onClick={()=> setShowSearch(prev => ! prev)} className="nav-item"><i className="bx bx-search"></i></li>
                 <Link to='/categories' className="nav-item"><i className="bx bx-category-alt"></i></Link>
                 <Link to='/auth' className="nav-item"><i className="bx bx-user"></i></Link>
                 <Link to='/trends' className="nav-item"><i className='bx bx-trending-up' ></i></Link>

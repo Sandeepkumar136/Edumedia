@@ -8,19 +8,29 @@ import Categories from './components/pages/Categories';
 import Bookmarks from './components/pages/Bookmarks';
 import Trending from './components/pages/Trending';
 import BooksDetails from './components/contents/Home/BooksDetails';
+import { SearchContextProvider } from './components/context/SearchContext';
 
 const App = () => {
   return (
     <Router>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/auth' element={<Authors/>} />
-        <Route path='/categories' element={<Categories/>} />
-        <Route path='/bookmarks' element={<Bookmarks/>} />
-        <Route path='/trends' element={<Trending/>} />
-        <Route path='/book/:id' element={<BooksDetails/>} />
-      </Routes>
+
+
+      
+      <SearchContextProvider>
+        <Navbar />
+
+
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/auth' element={<Authors />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/bookmarks' element={<Bookmarks />} />
+          <Route path='/trends' element={<Trending />} />
+          <Route path='/book/:id' element={<BooksDetails />} />
+        </Routes>
+
+
+      </SearchContextProvider>
     </Router>
   )
 }

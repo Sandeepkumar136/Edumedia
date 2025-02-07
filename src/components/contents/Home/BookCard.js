@@ -7,13 +7,30 @@ const BookCard = ({ book }) => {
     : "https://via.placeholder.com/150x220?text=No+Cover";
 
   return (
-    <div style={{ border: "1px solid #ccc", padding: "10px", textAlign: "center" }}>
-      <img src={coverUrl} alt={book.title} style={{ width: "150px", height: "220px", objectFit: "cover" }} />
-      <h3>{book.title}</h3>
-      <p>Author: {book.author_name?.[0] || "Unknown"}</p>
-      <Link to={`/book/${book.key.replace("/works/", "")}`} style={{ textDecoration: "none", color: "blue" }}>
-        View Details
-      </Link>
+    <div className="config-home">
+      <div className="home-card"
+      >
+        <div className="home-img-contain">
+          <img
+          className="img-home"
+            src={coverUrl}
+            alt={book.title}
+          />
+        </div>
+        <div className="home-text-contain">
+          <div className="heading-config">
+          <h3>{book.title}.</h3>
+          <i className="icon-save bx bx-bookmark"></i>
+
+          </div>
+          <p><span className="span-p-home" >Author:</span> <span className="span-text-home">{book.author_name?.[0] || "Unknown"}</span></p>
+          <Link className="btn-home"
+            to={`/book/${book.key.replace("/works/", "")}`}
+          >
+            View Details
+          </Link>
+        </div>
+    </div>
     </div>
   );
 };
