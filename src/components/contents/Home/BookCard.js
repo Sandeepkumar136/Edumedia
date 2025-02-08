@@ -23,7 +23,7 @@ const BookCard = ({ book }) => {
           <i className="icon-save bx bx-bookmark"></i>
 
           </div>
-          <p><span className="span-p-home" >Author:</span> <span className="span-text-home">{book.author_name?.[0] || "Unknown"}</span></p>
+          <p className="auth-name" ><span className="span-p-home" >Author:</span> <span className="span-text-home">{book.author_name?.[0] || "Unknown"}</span></p>
           <Link className="btn-home"
             to={`/book/${book.key.replace("/works/", "")}`}
           >

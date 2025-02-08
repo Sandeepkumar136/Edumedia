@@ -21,23 +21,69 @@ const BookDetails = () => {
 
   const readableLink = `https://openlibrary.org/works/${id}`;
 
+  // Extract book description
+  let bookDescription = book.description
+    ? typeof book.description === "string"
+      ? book.description
+      : book.description.value
+    : "No description available.";
+
+  // Function to format the description properly
+  const formatDescription = (text) => {
+    // Convert Markdown-style links [text](url) into <a> tags
+    text = text.replace(
+      /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:blue;text-decoration:none">$1</a>'
+    );
+
+    // Preserve existing HTML tags inside <span> for safety
+    text = text.replace(
+      /<\/?(b|i|u|em|strong|small|mark|del|ins|sub|sup)>/g,
+      (match) => `<span>${match}</span>`
+    );
+
+    return { __html: text };
+  };
+
+  // Extract and format subjects
+  const formattedSubjects = book.subjects?.length ? (
+    <div>
+      <strong>Subjects:</strong>{" "}
+      {book.subjects.map((subject, index) => (
+        <span
+          key={index}
+          style={{
+            display: "inline-block",
+            backgroundColor: "#f0f0f0",
+            padding: "5px 10px",
+            margin: "5px",
+            borderRadius: "5px",
+            fontSize: "14px",
+          }}
+        >
+          {subject}
+        </span>
+      ))}
+    </div>
+  ) : (
+    <p><strong>Subjects:</strong> Unknown subjects</p>
+  );
+
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
+    <div className="bd-container">
       <div className="bd-img-contain">
-        <img
+        <img className="img-bd"
           src={coverUrl}
           alt={book.title}
-          style={{ width: "200px", height: "300px" }}
         />
       </div>
-      <h1>{book.title}</h1>
+      <div className="bd-text-contain">
+      <h1>{book.title}.</h1>
       <p>
         <strong>Description:</strong>{" "}
-        {book.description?.value || "No description available"}
+        <span dangerouslySetInnerHTML={formatDescription(bookDescription)} />
       </p>
-      <p>
-        <strong>Subjects:</strong> {book.subjects?.join(", ") || "Unknown"}
-      </p>
+      {formattedSubjects}
       <a
         href={readableLink}
         target="_blank"
@@ -46,6 +92,7 @@ const BookDetails = () => {
       >
         📖 Read Now
       </a>
+      </div>
     </div>
   );
 };
