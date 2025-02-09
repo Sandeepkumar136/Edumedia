@@ -28,7 +28,7 @@ const Navbar = () => {
         </nav>
         <aside className={`sidebar ${isSidebarOpen? 'open': ''}`} >
             <ul className="side-content">
-                <li onClick={ToggleSidebar} className="side-item"><span className="icon-side"><i className="bx bx-search"></i></span><span className="text-side">Search</span></li>
+                <li  onClick={()=> {setShowSearch(prev => ! prev); ToggleSidebar();}} className="side-item"><span className="icon-side"><i className="bx bx-search"></i></span><span className="text-side">Search</span></li>
                 <Link onClick={ToggleSidebar} to='/categories' className="side-item"><span className="icon-side"><i className="bx bx-category-alt"></i></span><span className="text-side">Categories</span></Link>
                 <Link onClick={ToggleSidebar} to='/auth' className="side-item"><span className="icon-side"><i className="bx bx-user"></i></span><span className="text-side">Authors</span></Link>
                 <Link onClick={ToggleSidebar} to='/trends' className="side-item"><span className="icon-side"><i className="bx bx-trending-up"></i></span><span className="text-side">Trending</span></Link>
