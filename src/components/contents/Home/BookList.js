@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
 import BookCard from "./BookCard";
 import SearchContext from "../../context/SearchContext";
+import Loader from "../../utility/Spinner";
 
 const BookList = () => {
     const [books, setBooks] = useState([]);
@@ -18,28 +20,48 @@ const BookList = () => {
     }, [search]);
 
     return (
-        <div style={{ textAlign: "center" }}>
-            {
-                showSearch &&
-
-                <div className="search-box-contain">
-                    <h1>📚 Book Library</h1>
+        <div>
+            {/* Animate Search Box from Top */}
+            {showSearch && (
+                <motion.div 
+                    className="search-box-contain"
+                    initial={{ y: -50, opacity: 0 }} // Start from top, hidden
+                    animate={{ y: 0, opacity: 1 }} // Move to original position
+                    transition={{ duration: 0.5, ease: "easeOut" }} // Smooth effect
+                >
+                    <h1 className="heading-search">Search Your Need...</h1>
                     <input
+                        className="input-search"
                         type="text"
                         placeholder="Search books..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        style={{ padding: "10px", width: "300px", marginBottom: "20px" }}
                     />
-                </div>
-            }
-            <div className="home-card-container">
+                </motion.div>
+            )}
+
+            {/* Animate Book Cards from Bottom */}
+            <motion.div 
+                className="home-card-container"
+                initial={{ y: 50, opacity: 0 }} // Start from bottom, hidden
+                animate={{ y: 0, opacity: 1 }} // Move to original position
+                transition={{ duration: 0.6, ease: "easeOut" }} // Smooth effect
+            >
                 {books.length > 0 ? (
-                    books.map((book) => <BookCard key={book.key} book={book} />)
+                    books.map((book, index) => (
+                        <motion.div
+                            key={book.key}
+                            initial={{ y: 20, opacity: 0 }} // Start slightly lower
+                            animate={{ y: 0, opacity: 1 }} // Move up to normal
+                            transition={{ delay: index * 0.05, duration: 0.3 }} // Staggered animation
+                        >
+                            <BookCard book={book} />
+                        </motion.div>
+                    ))
                 ) : (
-                    <p>Loading books...</p>
+                    <Loader />
                 )}
-            </div>
+            </motion.div>
         </div>
     );
 };

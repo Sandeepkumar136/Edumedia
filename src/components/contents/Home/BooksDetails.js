@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { motion } from "framer-motion";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import Spinner from "../../utility/Spinner";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -13,7 +17,7 @@ const BookDetails = () => {
       .catch((error) => console.error(error));
   }, [id]);
 
-  if (!book) return <p>Loading...</p>;
+  if (!book) return <Spinner />;
 
   const coverUrl = book.covers
     ? `https://covers.openlibrary.org/b/id/${book.covers[0]}-L.jpg`
@@ -28,72 +32,94 @@ const BookDetails = () => {
       : book.description.value
     : "No description available.";
 
-  // Function to format the description properly
+  // Function to format description (Markdown support for bold, italic, links)
   const formatDescription = (text) => {
-    // Convert Markdown-style links [text](url) into <a> tags
     text = text.replace(
       /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
       '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:blue;text-decoration:none">$1</a>'
     );
-
-    // Preserve existing HTML tags inside <span> for safety
-    text = text.replace(
-      /<\/?(b|i|u|em|strong|small|mark|del|ins|sub|sup)>/g,
-      (match) => `<span>${match}</span>`
-    );
+    text = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+    text = text.replace(/\*(.*?)\*/g, "<i>$1</i>");
 
     return { __html: text };
   };
 
   // Extract and format subjects
   const formattedSubjects = book.subjects?.length ? (
-    <div>
+    <motion.div
+      className="sub-bd-contain"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+    >
       <strong>Subjects:</strong>{" "}
       {book.subjects.map((subject, index) => (
-        <span
-          key={index}
-          style={{
-            display: "inline-block",
-            backgroundColor: "#f0f0f0",
-            padding: "5px 10px",
-            margin: "5px",
-            borderRadius: "5px",
-            fontSize: "14px",
-          }}
-        >
-          {subject}
-        </span>
+        <span key={index}>{subject}</span>
       ))}
-    </div>
+    </motion.div>
   ) : (
-    <p><strong>Subjects:</strong> Unknown subjects</p>
+    <p>
+      <strong>Subjects:</strong> Unknown subjects
+    </p>
   );
 
   return (
-    <div className="bd-container">
-      <div className="bd-img-contain">
-        <img className="img-bd"
+    <motion.div
+      className="bd-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        className="bd-img-contain"
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <LazyLoadImage
+          className="img-bd"
           src={coverUrl}
           alt={book.title}
+          effect="blur"
+          width={200}
+          height={300}
+          placeholderSrc="https://via.placeholder.com/200x300?text=Loading..."
         />
-      </div>
-      <div className="bd-text-contain">
-      <h1>{book.title}.</h1>
-      <p>
-        <strong>Description:</strong>{" "}
-        <span dangerouslySetInnerHTML={formatDescription(bookDescription)} />
-      </p>
-      {formattedSubjects}
-      <a
-        href={readableLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ textDecoration: "none", color: "blue", fontSize: "18px" }}
+      </motion.div>
+
+      <motion.div
+        className="bd-text-contain"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        📖 Read Now
-      </a>
-      </div>
-    </div>
+        <motion.h1
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          {book.title}.
+        </motion.h1>
+
+        <p>
+          <strong>Description:</strong>{" "}
+          <span dangerouslySetInnerHTML={formatDescription(bookDescription)} />
+        </p>
+
+        {formattedSubjects}
+
+        <motion.a
+          className="bd-link"
+          href={readableLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Read Now
+        </motion.a>
+      </motion.div>
+    </motion.div>
   );
 };
 
