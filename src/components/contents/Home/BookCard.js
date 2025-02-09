@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useSavedBooks } from "../../context/SavedBooksProvider";
 
 const BookCard = ({ book }) => {
   // Debugging: Check what data is coming
   console.log("Book Data:", book);
+  const {savedBooks, toggleSaveBook} = useSavedBooks();
+  const isSaved = savedBooks.some((b)=> b.key === book.key);
 
   // Handle cover image fallback
   const coverUrl = book.cover_i
@@ -45,10 +48,12 @@ const BookCard = ({ book }) => {
               {book.title}
             </motion.h3>
             <motion.i
-              className="icon-save bx bx-bookmark"
+              className={`icon-save bx ${isSaved ? "bx-bookmark-minus": "bx-bookmark"}`}
+              style={{color: isSaved ? "red": "black"}}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
+              onClick={()=> toggleSaveBook(book)}
             ></motion.i>
           </div>
           <p className="auth-name">
