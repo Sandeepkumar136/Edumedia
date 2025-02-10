@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSavedBooks } from "../../context/SavedBooksProvider";
+import { SoundContext } from "../../context/SoundContext";
 
 const BookCard = ({ book }) => {
   // Debugging: Check what data is coming
   console.log("Book Data:", book);
   const {savedBooks, toggleSaveBook} = useSavedBooks();
   const isSaved = savedBooks.some((b)=> b.key === book.key);
+  const { playSound } = useContext(SoundContext);
 
   // Handle cover image fallback
   const coverUrl = book.cover_i
@@ -61,7 +63,7 @@ const BookCard = ({ book }) => {
             <span className="span-text-home">{author}</span>
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link className="btn-home" to={book.key ? `/book/${book.key.replace("/works/", "")}` : "#"}>
+            <Link onClick={playSound} className="btn-home" to={book.key ? `/book/${book.key.replace("/works/", "")}` : "#"}>
               View Details
             </Link>
           </motion.div>

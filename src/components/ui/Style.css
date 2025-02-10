@@ -510,7 +510,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  border: 3px solid #2f00ff;
+  border: 3px solid #0088ff;
   padding: 10px 16px;
   width: 300px;
   font-size: 1rem;
@@ -529,4 +529,32 @@
   align-items: center;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.dropdownbtn {
+  padding: 2rem;
+  background-color: rgba(230, 229, 229, 0.5176470588);
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+}
+
+.heading-select {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+
+.dropdownbtn select {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 425px) {
+  .heading-select {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=Style.css.map */

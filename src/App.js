@@ -10,10 +10,13 @@ import Trending from "./components/pages/Trending";
 import BooksDetails from "./components/contents/Home/BooksDetails";
 import { SearchContextProvider } from "./components/context/SearchContext";
 import { SavedBooksProvider } from "./components/context/SavedBooksProvider";
+import AuthorDetails from "./components/contents/Auth/AuthorDetails";
+import { SoundProvider } from "./components/context/SoundContext";
 
 const App = () => {
   return (
     <Router>
+      <SoundProvider>
       <SavedBooksProvider>
         <SearchContextProvider>
           <Navbar />
@@ -25,9 +28,11 @@ const App = () => {
             <Route path="/bookmarks" element={<Bookmarks />} />
             <Route path="/trends" element={<Trending />} />
             <Route path="/book/:id" element={<BooksDetails />} />
+            <Route path="/author/:id" element={<AuthorDetails />} />
           </Routes>
         </SearchContextProvider>
       </SavedBooksProvider>
+      </SoundProvider>
     </Router>
   );
 };

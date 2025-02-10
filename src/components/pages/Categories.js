@@ -42,7 +42,7 @@ const Categories = () => {
   return (
     <div className="categories-container">
       <div className="dropdownbtn">
-        <h4 className="heading-select">Select a book category</h4>
+        <h4 className="heading-select">Select a book category.</h4>
         <Select
           options={categories}
           defaultValue={categories.find((cat) => cat.value === selectedCategory)}
