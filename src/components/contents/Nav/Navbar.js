@@ -23,8 +23,7 @@ const Navbar = () => {
                 <Link to='/trends' className="nav-item"><i className='bx bx-trending-up' ></i></Link>
                 <Link to='/bookmarks' className="nav-item"><i className='bx bx-bookmark' ></i></Link>
                 <li className="nav-item"><i className='bx bx-cog' ></i></li>
-                <li onClick={ToggleSidebar} className="nav-item-toggle"><i className='bx bx-menu' ></i></li>
-            </ul>
+                <li onClick={ToggleSidebar} className="nav-item-toggle"><i className={`bx ${isSidebarOpen? "bx-x":"bx-menu"}`}     </ul>
         </nav>
         <aside className={`sidebar ${isSidebarOpen? 'open': ''}`} >
             <ul className="side-content">
