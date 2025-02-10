@@ -42,3 +42,4 @@ const AuthorDetails = () => {
 };
 
 export default AuthorDetails;
+  
