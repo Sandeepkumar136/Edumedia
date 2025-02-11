@@ -7,7 +7,7 @@ export const VibrationProvider = ({children})=>{
 
     const handleClick = () =>{
         if(isVibrationEnabled && navigator.vibrate){
-            navigator.vibrate(100);
+            navigator.vibrate([300, 150, 300]); // Vibrate → Pause → Vibrate
         }
     };
 

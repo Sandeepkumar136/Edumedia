@@ -2,12 +2,17 @@ import React, { useContext, useState } from 'react'
 import ImageProvider from '../../assets/ImageProvider';
 import { Link } from 'react-router-dom';
 import SearchContext from '../../context/SearchContext';
+import { useDialogueContext } from '../../context/DialogueBoxContext';
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const {setShowSearch} = useContext(SearchContext);
+    const {OpenDialogue} = useDialogueContext();
     const ToggleSidebar = ()=>{
         setIsSidebarOpen(!isSidebarOpen)
+    }
+    if(OpenDialogue){
+        console.log('dialog opened')
     }
   return (
     <header className='header'>
@@ -22,7 +27,7 @@ const Navbar = () => {
                 <Link to='/auth' className="nav-item"><i className="bx bx-user"></i></Link>
                 <Link to='/trends' className="nav-item"><i className='bx bx-trending-up' ></i></Link>
                 <Link to='/bookmarks' className="nav-item"><i className='bx bx-bookmark' ></i></Link>
-                <li className="nav-item"><i className='bx bx-cog' ></i></li>
+                <li onClick={OpenDialogue()} className="nav-item"><i className='bx bx-cog' ></i></li>
                 <li onClick={ToggleSidebar} className="nav-item-toggle"><i className={`bx ${isSidebarOpen ? "bx-x": "bx-menu"}`} ></i></li>
             </ul>
         </nav>
@@ -33,7 +38,7 @@ const Navbar = () => {
                 <Link onClick={ToggleSidebar} to='/auth' className="side-item"><span className="icon-side"><i className="bx bx-user"></i></span><span className="text-side">Authors</span></Link>
                 <Link onClick={ToggleSidebar} to='/trends' className="side-item"><span className="icon-side"><i className="bx bx-trending-up"></i></span><span className="text-side">Trending</span></Link>
                 <Link onClick={ToggleSidebar} to='/bookmarks' className="side-item"><span className="icon-side"><i className="bx bx-bookmark"></i></span><span className="text-side">Bookmarks</span></Link>
-                <li onClick={ToggleSidebar} className="side-item"><span className="icon-side"><i className="bx bx-cog"></i></span><span className="text-side">Settings</span></li>
+                <li onClick={()=> {OpenDialogue();ToggleSidebar();}} className="side-item"><span className="icon-side"><i className="bx bx-cog"></i></span><span className="text-side">Settings</span></li>
             </ul>
         </aside>
       

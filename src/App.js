@@ -13,29 +13,35 @@ import { SavedBooksProvider } from "./components/context/SavedBooksProvider";
 import AuthorDetails from "./components/contents/Auth/AuthorDetails";
 import { SoundProvider } from "./components/context/SoundContext";
 import { VibrationProvider } from "./components/context/VibrationContext";
+import { DialogueBoxContextProvider } from "./components/context/DialogueBoxContext";
+import Dialogue from "./components/dialog/Dialogue";
 
 const App = () => {
   return (
     <Router>
-      <SoundProvider>
-        <VibrationProvider>
-      <SavedBooksProvider>
-        <SearchContextProvider>
-          <Navbar />
+      <DialogueBoxContextProvider>
+        <SoundProvider>
+          <VibrationProvider>
+            <SavedBooksProvider>
+              <SearchContextProvider>
+                <Navbar />
+                <Dialogue/>
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/auth" element={<Authors />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/bookmarks" element={<Bookmarks />} />
-            <Route path="/trends" element={<Trending />} />
-            <Route path="/book/:id" element={<BooksDetails />} />
-            <Route path="/author/:id" element={<AuthorDetails />} />
-          </Routes>
-        </SearchContextProvider>
-      </SavedBooksProvider>
-      </VibrationProvider>
-      </SoundProvider>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/auth" element={<Authors />} />
+                  <Route path="/categories" element={<Categories />} />
+                  <Route path="/bookmarks" element={<Bookmarks />} />
+                  <Route path="/trends" element={<Trending />} />
+                  <Route path="/book/:id" element={<BooksDetails />} />
+                  <Route path="/author/:id" element={<AuthorDetails />} />
+                  
+                </Routes>
+              </SearchContextProvider>
+            </SavedBooksProvider>
+          </VibrationProvider>
+        </SoundProvider>
+      </DialogueBoxContextProvider>
     </Router>
   );
 };
