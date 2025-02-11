@@ -12,11 +12,13 @@ import { SearchContextProvider } from "./components/context/SearchContext";
 import { SavedBooksProvider } from "./components/context/SavedBooksProvider";
 import AuthorDetails from "./components/contents/Auth/AuthorDetails";
 import { SoundProvider } from "./components/context/SoundContext";
+import { VibrationProvider } from "./components/context/VibrationContext";
 
 const App = () => {
   return (
     <Router>
       <SoundProvider>
+        <VibrationProvider>
       <SavedBooksProvider>
         <SearchContextProvider>
           <Navbar />
@@ -32,6 +34,7 @@ const App = () => {
           </Routes>
         </SearchContextProvider>
       </SavedBooksProvider>
+      </VibrationProvider>
       </SoundProvider>
     </Router>
   );

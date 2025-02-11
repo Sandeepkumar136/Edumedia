@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSavedBooks } from "../../context/SavedBooksProvider";
 import { SoundContext } from "../../context/SoundContext";
+import { useVibration } from "../../context/VibrationContext";
 
 const BookCard = ({ book }) => {
   // Debugging: Check what data is coming
@@ -12,6 +13,7 @@ const BookCard = ({ book }) => {
   const {savedBooks, toggleSaveBook} = useSavedBooks();
   const isSaved = savedBooks.some((b)=> b.key === book.key);
   const { playSound } = useContext(SoundContext);
+  const { handleClick } = useVibration();
 
   // Handle cover image fallback
   const coverUrl = book.cover_i
@@ -55,7 +57,7 @@ const BookCard = ({ book }) => {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              onClick={()=> {toggleSaveBook(book); playSound();}}
+              onClick={()=> {toggleSaveBook(book); playSound(); handleClick(); }}
             ></motion.i>
           </div>
           <p className="auth-name">
