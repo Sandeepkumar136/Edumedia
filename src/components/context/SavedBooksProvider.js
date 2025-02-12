@@ -18,19 +18,24 @@ export const SavedBooksProvider = ({ children }) => {
     localStorage.setItem("savedBooks", JSON.stringify(savedBooks));
   }, [savedBooks]);
 
+  // Function to add/remove a single book from favorites
   const toggleSaveBook = (book) => {
     setSavedBooks((prevBooks) => {
       const isSaved = prevBooks.some((b) => b.key === book.key);
-      if (isSaved) {
-        return prevBooks.filter((b) => b.key !== book.key); // Remove book
-      } else {
-        return [...prevBooks, book]; // Add book
-      }
+      return isSaved
+        ? prevBooks.filter((b) => b.key !== book.key) // Remove book
+        : [...prevBooks, book]; // Add book
     });
   };
 
+  // Function to remove all favorite books
+  const removeAllFavorites = () => {
+    setSavedBooks([]); // Clear all saved books
+    localStorage.removeItem("savedBooks"); // Also clear from localStorage
+  };
+
   return (
-    <SavedBooksContext.Provider value={{ savedBooks, toggleSaveBook }}>
+    <SavedBooksContext.Provider value={{ savedBooks, toggleSaveBook, removeAllFavorites }}>
       {children}
     </SavedBooksContext.Provider>
   );

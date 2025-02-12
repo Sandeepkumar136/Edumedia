@@ -11,6 +11,7 @@ const Dialogue = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
   const { isSoundEnabled, toggleSound, playSound } = useContext(SoundContext);
   const { isVibrationEnabled, toggleVibration, handleClick } = useVibration();
+  
 
   const [settings, setSettings] = useState({
     userScreen: false,
@@ -168,10 +169,7 @@ const Dialogue = () => {
                 <span className="text-setting">Remove all Favorites</span>
               </div>
               <div className="right-setting-align">
-                <Switch
-                  onChange={() => toggleSwitch("ipTracking")}
-                  checked={settings.ipTracking}
-                />
+                <button className="setting-btn" type="button">Remove</button>
               </div>
             </motion.div>
 
