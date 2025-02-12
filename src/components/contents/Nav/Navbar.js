@@ -27,7 +27,7 @@ const Navbar = () => {
                 <Link to='/auth' className="nav-item"><i className="bx bx-user"></i></Link>
                 <Link to='/trends' className="nav-item"><i className='bx bx-trending-up' ></i></Link>
                 <Link to='/bookmarks' className="nav-item"><i className='bx bx-bookmark' ></i></Link>
-                <li onClick={OpenDialogue()} className="nav-item"><i className='bx bx-cog' ></i></li>
+                <li onClick={OpenDialogue} className="nav-item"><i className='bx bx-cog' ></i></li>
                 <li onClick={ToggleSidebar} className="nav-item-toggle"><i className={`bx ${isSidebarOpen ? "bx-x": "bx-menu"}`} ></i></li>
             </ul>
         </nav>
