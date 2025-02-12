@@ -15,10 +15,12 @@ import { SoundProvider } from "./components/context/SoundContext";
 import { VibrationProvider } from "./components/context/VibrationContext";
 import { DialogueBoxContextProvider } from "./components/context/DialogueBoxContext";
 import Dialogue from "./components/dialog/Dialogue";
+import { DarkModeProvider } from "./components/context/DarkModeContext";
 
 const App = () => {
   return (
     <Router>
+      <DarkModeProvider>
       <DialogueBoxContextProvider>
         <SoundProvider>
           <VibrationProvider>
@@ -42,6 +44,7 @@ const App = () => {
           </VibrationProvider>
         </SoundProvider>
       </DialogueBoxContextProvider>
+      </DarkModeProvider>
     </Router>
   );
 };
