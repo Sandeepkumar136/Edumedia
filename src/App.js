@@ -16,19 +16,22 @@ import { VibrationProvider } from "./components/context/VibrationContext";
 import { DialogueBoxContextProvider } from "./components/context/DialogueBoxContext";
 import Dialogue from "./components/dialog/Dialogue";
 import { DarkModeProvider } from "./components/context/DarkModeContext";
+import { ConfirmBoxContextProvider } from "./components/context/ConfirmBoxContext";
+import ConfirmDialogueBox from "./components/contents/others/ConfirmDialogueBox";
 
 const App = () => {
   return (
     <Router>
       <DarkModeProvider>
       <DialogueBoxContextProvider>
+        <ConfirmBoxContextProvider>
         <SoundProvider>
           <VibrationProvider>
             <SavedBooksProvider>
               <SearchContextProvider>
                 <Navbar />
                 <Dialogue/>
-
+                <ConfirmDialogueBox/>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/auth" element={<Authors />} />
@@ -43,6 +46,7 @@ const App = () => {
             </SavedBooksProvider>
           </VibrationProvider>
         </SoundProvider>
+        </ConfirmBoxContextProvider>
       </DialogueBoxContextProvider>
       </DarkModeProvider>
     </Router>

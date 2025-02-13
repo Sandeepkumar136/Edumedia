@@ -5,13 +5,14 @@ import { useDarkMode } from "../context/DarkModeContext";
 import { SoundContext } from "../context/SoundContext";
 import { useVibration } from "../context/VibrationContext";
 import { motion } from "framer-motion"; // Import Framer Motion
+import { UseConfirmBox } from "../context/ConfirmBoxContext";
 
 const Dialogue = () => {
   const { isDialogueOpen, CloseDialogue } = useDialogueContext();
   const { darkMode, toggleDarkMode } = useDarkMode();
   const { isSoundEnabled, toggleSound, playSound } = useContext(SoundContext);
   const { isVibrationEnabled, toggleVibration, handleClick } = useVibration();
-  
+  const { OpenConfirmBox } = UseConfirmBox();
 
   const [settings, setSettings] = useState({
     userScreen: false,
@@ -62,7 +63,9 @@ const Dialogue = () => {
             >
               <div className="setting-left-align">
                 <i className={`bx ${darkMode ? "bx-moon" : "bx-sun"}`}></i>
-                <span className="text-setting">{darkMode ? "Disable Dark Mode": "Enable Dark Mode"}</span>
+                <span className="text-setting">
+                  {darkMode ? "Disable Dark Mode" : "Enable Dark Mode"}
+                </span>
               </div>
               <div className="right-setting-align">
                 <Switch
@@ -92,7 +95,9 @@ const Dialogue = () => {
                     isSoundEnabled ? "bxs-bell" : "bxs-bell-off"
                   }`}
                 ></i>
-                <span className="text-setting">{isSoundEnabled ? "Disable Tap Sound": "Enable Tab Sound"}</span>
+                <span className="text-setting">
+                  {isSoundEnabled ? "Disable Tap Sound" : "Enable Tab Sound"}
+                </span>
               </div>
               <div className="right-setting-align">
                 <Switch
@@ -137,10 +142,16 @@ const Dialogue = () => {
               <div className="setting-left-align">
                 <i
                   className={`bx ${
-                    isVibrationEnabled ? "bxs-mobile-vibration" : "bx-mobile-vibration"
+                    isVibrationEnabled
+                      ? "bxs-mobile-vibration"
+                      : "bx-mobile-vibration"
                   }`}
                 ></i>
-                <span className="text-setting">{isVibrationEnabled ? "Disable Vibration": "Enable Vibration"}</span>
+                <span className="text-setting">
+                  {isVibrationEnabled
+                    ? "Disable Vibration"
+                    : "Enable Vibration"}
+                </span>
               </div>
               <div className="right-setting-align">
                 <Switch
@@ -165,11 +176,13 @@ const Dialogue = () => {
               whileTap={{ scale: 0.95 }}
             >
               <div className="setting-left-align">
-                <i className="bx bx-moon"></i>
-                <span className="text-setting">Remove all Favorites</span>
+                <i className="bx bxs-heart-square"></i>
+                <span className="text-setting">Remove all <Bookmarks></Bookmarks></span>
               </div>
               <div className="right-setting-align">
-                <button className="setting-btn" type="button">Remove</button>
+                <button onClick={OpenConfirmBox} className="setting-btn" type="button">
+                  Remove
+                </button>
               </div>
             </motion.div>
 
@@ -180,14 +193,13 @@ const Dialogue = () => {
               whileTap={{ scale: 0.95 }}
             >
               <div className="setting-left-align">
-                <i className="bx bx-moon"></i>
+                <i className="bx bx-data"></i>
                 <span className="text-setting">Delete all Data</span>
               </div>
               <div className="right-setting-align">
-                <Switch
-                  onChange={() => toggleSwitch("twoFactorAuth")}
-                  checked={settings.twoFactorAuth}
-                />
+                <button type="button" className="setting-btn">
+                  Delete
+                </button>
               </div>
             </motion.div>
           </div>
