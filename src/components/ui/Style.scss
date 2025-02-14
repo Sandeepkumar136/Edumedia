@@ -653,7 +653,6 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .confirm-box{
-  border: 2px solid #000;
   width: 450px;
   height: 200px;
   backdrop-filter: blur(10px) saturate(180%);
@@ -725,4 +724,142 @@
 }
 .b-2:hover{
   background-color: rgb(67, 182, 67);
+}
+// scanner
+.b-c-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 30vh;
+  background-color: rgb(0, 100, 0);
+}
+.b-c-heading-config{
+  gap: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+}
+.heading-inp-b-c{
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+}
+.medil-heading-b-c{
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.input-contain-b-c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  margin: auto;
+}
+.inp-b-c{
+  border: none;
+  background-color: #fff;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.b-c-btn{
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(0, 100, 0);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s all ease-in;
+  -webkit-transition: 0.3s all ease-in;
+  -moz-transition: 0.3s all ease-in;
+  -ms-transition: 0.3s all ease-in;
+  -o-transition: 0.3s all ease-in;
+}
+.b-c-btn:hover{
+  background-color: #fff;
+  color: #333;
+}
+.b-c-card-container{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 0.5rem;
+}
+.isbn-book-container{
+  padding: 1rem;
+  background-color: #e3e3e377;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.contain-b-c{
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+}
+.heading-b-c{
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.isbn-book-author{
+  font-size: 1rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 0.3rem;
+  padding: 0.3rem;
+}
+.isbn-book-remove-btn{
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isbn-book-btn{
+  border: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  background-color: rgb(0, 121, 0);
+  color: #fff;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.3s all ease-in;
+  -webkit-transition: 0.3s all ease-in;
+  -moz-transition: 0.3s all ease-in;
+  -ms-transition: 0.3s all ease-in;
+  -o-transition: 0.3s all ease-in;
+}
+.isbn-book-btn:hover{
+  background-color: rgb(0, 61, 0);
+  cursor: pointer;
 }
