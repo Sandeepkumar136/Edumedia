@@ -9,7 +9,6 @@ import Trending from "./components/pages/Trending";
 import BooksDetails from "./components/contents/Home/BooksDetails";
 import { SearchContextProvider } from "./components/context/SearchContext";
 import { SavedBooksProvider } from "./components/context/SavedBooksProvider";
-import AuthorDetails from "./components/contents/Auth/AuthorDetails";
 import { SoundProvider } from "./components/context/SoundContext";
 import { VibrationProvider } from "./components/context/VibrationContext";
 import { DialogueBoxContextProvider } from "./components/context/DialogueBoxContext";
@@ -19,6 +18,7 @@ import { ConfirmBoxContextProvider } from "./components/context/ConfirmBoxContex
 import ConfirmDialogueBox from "./components/contents/others/ConfirmDialogueBox";
 import ISBNScanner from "./components/pages/ISBNScanner";
 import { BookProvider } from "./components/context/BookContext";
+import About from "./components/pages/About";
 
 const App = () => {
   return (
@@ -40,8 +40,10 @@ const App = () => {
                   <Route path="/categories" element={<Categories />} />
                   <Route path="/bookmarks" element={<Bookmarks />} />
                   <Route path="/trends" element={<Trending />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="/book/:id" element={<BooksDetails />} />
-                  <Route path="/author/:id" element={<AuthorDetails />} />
+                  
+
                   
                 </Routes>
               </SearchContextProvider>
