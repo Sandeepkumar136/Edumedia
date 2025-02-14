@@ -12,8 +12,10 @@
     "react-router-dom": "^7.1.5",
     "react-scripts": "5.0.1",
     "react-select": "^5.10.0",
+    "react-slick": "^0.30.3",
     "react-spinners": "^0.15.0",
     "react-switch": "^7.1.0",
+    "slick-carousel": "^1.8.1",
     "use-sound": "^4.0.3"
   },
   "scripts": {
