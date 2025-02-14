@@ -81,8 +81,6 @@ const BookDetails = () => {
           src={coverUrl}
           alt={book.title}
           effect="blur"
-          width={200}
-          height={300}
           placeholderSrc="https://via.placeholder.com/200x300?text=Loading..."
         />
       </motion.div>

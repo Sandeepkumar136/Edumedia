@@ -253,7 +253,7 @@
   overflow: hidden;
 }
 .dark-mode .config-home{
-  background: #000957;
+  background: #000422;
   border: 0.5px solid #005aa9;
 }
 .home-card {
@@ -405,7 +405,6 @@
   justify-self: center;
   align-self: center;
   margin: 1rem;
-  // background-image: url();
 }
 .bd-img-contain {
   width: 50%;
@@ -461,6 +460,9 @@
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
 }
+.dark-mode .sub-bd-contain span{
+  background-color: #10076e;
+}
 .bd-link {
   font-size: 1.1rem;
   text-decoration: none;
@@ -482,11 +484,14 @@
     margin: 1rem;
   }
   .bd-img-contain {
-    width: 100%;
-    background-color: #0088ff;
+    width: 90%;
+    background-color: #00366482;
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-self: center;
+    align-self: center;
+    padding: 1rem;
   }
   .bd-text-contain {
     width: 100%;
@@ -495,10 +500,9 @@
     width: 150px;
     height: 220px;
     display: flex;
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
-    margin: auto;
-    border: 2px solid red;
+    margin: auto;    
   }
   .bd-text-contain h1 {
     font-size: 0.9rem;
