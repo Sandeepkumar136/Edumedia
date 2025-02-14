@@ -8,6 +8,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+.dark-mode{
+  background-color: #000957;
+  color: #f9f9f9;
+}
 .header {
   position: sticky;
   z-index: 2147483647;
@@ -19,6 +23,14 @@
   padding: 1rem 2rem;
   box-shadow: 0px 0px 0px 0.1px #999;
   background: rgba(255, 255, 255, 0.37);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dark-mode .nav{
+  box-shadow: 0px 0px 0px 0.1px #999;
+  background: rgba(36, 0, 155, 0.37);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
@@ -36,6 +48,12 @@
 }
 .logo-text {
   font-size: 1.4rem;
+  color: #111;
+  border: none;
+  outline: none;
+}
+.dark-mode .logo-text{
+  color: #f9f9f9;
 }
 .logo {
   width: 40px;
@@ -75,6 +93,14 @@
   background-color: #000;
   color: #fff;
 }
+.dark-mode .nav-item{
+  background-color: #000;
+  color: #fff;
+}
+.dark-mode .nav-item:hover{
+  background-color: #fff;
+  color: #000;
+}
 .nav-item-toggle {
   font-size: 1.7rem;
   display: flex;
@@ -95,9 +121,13 @@
   visibility: hidden;
   display: none;
 }
-.nav-item-toggle:hover {
+.dark-mode .nav-item-toggle{
   background-color: #000;
   color: #fff;
+}
+.nav-item-toggle:hover {
+  background-color: #fff;
+  color: #000;
 }
 .sidebar {
   position: fixed;
@@ -121,6 +151,14 @@
   -moz-transition: 0.5s all ease-in-out;
   -ms-transition: 0.5s all ease-in-out;
   -o-transition: 0.5s all ease-in-out;
+}
+.dark-mode .sidebar{
+  box-shadow: 0px 0px 0px 0.1px #999;
+  background: rgba(36, 0, 155, 0.37);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .sidebar.open {
   transform: translateX(0);
@@ -165,6 +203,10 @@
 .icon-side {
   font-size: 1.7rem;
 }
+.dark-mode .side-item{
+  background-color: #2300743d;
+  color: #f9f9f9;
+}
 .text-side {
   width: 100%;
   font-weight: 500;
@@ -207,8 +249,12 @@
   margin: 0.5rem;
 }
 .config-home {
-  background: linear-gradient(45deg, #2f00ff, #ff009d08);
+  background: linear-gradient(45deg, #4100a8, #c1c0c02a);
   overflow: hidden;
+}
+.dark-mode .config-home{
+  background: #000957;
+  border: 0.5px solid #005aa9;
 }
 .home-card {
   display: flex;
@@ -221,6 +267,14 @@
   background-color: rgba(255, 255, 255, 0.85);
   //   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.dark-mode .home-card{
+  backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(0, 5, 108, 0.85);
+  //   border-radius: 12px;
+  border: 1px solid rgba(0, 102, 255, 0.3);
 }
 .home-img-contain {
   height: 100%;
@@ -295,6 +349,10 @@
   background-color: #000;
   color: #fff;
 }
+.dark-mode .btn-home{
+  background-color: #000957;
+  color: #f9f9f9;
+}
 @media only screen and (max-width: 1249px) {
   .home-card-container {
     width: 100%;
@@ -316,6 +374,9 @@
     padding: 0.3rem;
     margin-bottom: 0.5rem;
     background-color: #fff;
+  }
+  .dark-mode .home-img-contain{
+    background-color: #423b8f;
   }
   .img-home {
     width: 75px;
@@ -422,6 +483,10 @@
   }
   .bd-img-contain {
     width: 100%;
+    background-color: #0088ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .bd-text-contain {
     width: 100%;
@@ -429,6 +494,11 @@
   .img-bd {
     width: 150px;
     height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 2px solid red;
   }
   .bd-text-contain h1 {
     font-size: 0.9rem;
@@ -464,6 +534,9 @@
   gap: 0.3rem;
   background-color: #dbdbdb66;
 }
+.dark-mode .search-box-contain{
+  background-color: #151e6d;
+}
 .input-search {
   display: flex;
   justify-content: center;
@@ -480,6 +553,13 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.dark-mode .input-search{
+  border: 3px solid #0095ff;
+  color: #000;
+  background-color: #fff;
 }
 .heading-search {
   display: flex;
@@ -501,6 +581,9 @@
   justify-self: center;
   align-self: center;
 }
+.dark-mode .dropdownbtn{
+  background-color: #151e6d;
+}
 .heading-select {
   text-transform: capitalize;
   font-size: 1.1rem;
@@ -508,6 +591,32 @@
 .dropdownbtn select {
   cursor: pointer;
 }
+.dark-mode .dropdownbtn {
+  color: white;
+}
+
+.dark-mode .react-select__control {
+  background-color: #001eff !important;
+  border-color: #555 !important;
+  color: white !important;
+}
+
+.dark-mode .react-select__menu {
+  background-color: #4b93c6 !important;
+}
+
+.dark-mode .react-select__option {
+  color: white !important;
+}
+
+.dark-mode .react-select__option--is-selected {
+  background-color: #555 !important;
+}
+
+.dark-mode .react-select__option--is-focused {
+  background-color: #444 !important;
+}
+
 @media only screen and (max-width: 425px) {
   .heading-select {
     font-size: 1rem;
@@ -530,6 +639,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.dark-mode .dialog-box{
+  background: rgba(15, 23, 137, 0.507);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(29, 2, 185, 0.416);
+  backdrop-filter: blur(3.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(0, 72, 255, 0.3);
 }
 .dialog-box{
   width: 800px;
@@ -671,6 +788,14 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+.dark-mode .confirm-box{
+  background: rgba(15, 23, 137, 0.507);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(29, 2, 185, 0.416);
+  backdrop-filter: blur(3.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(0, 72, 255, 0.3);
+}
 .heading-confirm{
   display: flex;
   font-weight: 500;
@@ -807,6 +932,10 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
 }
+.dark-mode .isbn-book-container{
+  background-color: #151e6d;
+  border: 0.5px solid #001eff;
+}
 .contain-b-c{
   display: flex;
   justify-content: space-between;
@@ -835,6 +964,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
+}
+.dark-mode .isbn-book-remove-btn{
+  color: #f9f9f9;
 }
 .isbn-book-btn{
   border: none;
@@ -862,4 +995,120 @@
 .isbn-book-btn:hover{
   background-color: rgb(0, 61, 0);
   cursor: pointer;
+}
+.b-c-overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.b-c-c-box{
+  width: 450px;
+  height: 200px;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.832);
+  border-radius: 5px;
+  border: 1px solid rgba(209, 213, 219, 0.567);
+  padding: 1rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -o-border-radius: 5px;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.b-c-c-box{
+  background: rgba(15, 23, 137, 0.507);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(29, 2, 185, 0.416);
+  backdrop-filter: blur(3.1px);
+  -webkit-backdrop-filter: blur(5.1px);
+  border: 1px solid rgba(0, 72, 255, 0.3);
+}
+// full media Quieries
+@media only screen and (max-width: 559px) {
+  .confirm-box{
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 1rem;
+    margin: 2rem;
+  }
+  .b-c-c-box{
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 1rem;
+    margin: 2rem;
+  }
+  .heading-confirm{
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    text-align: center;
+  }
+  .btn-confirm{
+    font-size: 0.7rem;
+    padding: 5px 10px;
+  }
+}
+@media only screen and (max-width: 631px) {
+  .b-c-card-container{
+    width: 100%;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .isbn-book-container{
+    padding: 0.5rem;
+  }
+  .heading-b-c{
+    font-size: 0.9rem;
+  }
+  .isbn-book-author{
+    font-size: 0.7rem;
+  }
+  .isbn-book-btn{
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.isbn-book-remove-btn{
+  font-size: 1.3rem;
+}
+  
+}
+@media only screen and (max-width: 425px) {
+  .heading-inp-b-c{
+    font-size: 1rem;
+  }
+  .medil-heading-b-c{
+    font-size: 0.8rem;
+  }
+  .inp-b-c{
+    font-size: 0.7rem;
+  }
+  .b-c-btn{
+    font-size: 0.7rem;
+  }
+  
 }

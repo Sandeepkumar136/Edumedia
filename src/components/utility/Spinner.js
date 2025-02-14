@@ -13,7 +13,6 @@ const Loader = ({ loading }) => {
         position: "fixed",
         top: "0",
         left: "0", // Center it properly
-        backgroundColor: "rgba(255, 255, 255, 0.8)", // Optional: Light overlay effect
         zIndex: 9999, // Ensures it's above everything
       }}
     >

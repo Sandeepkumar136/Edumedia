@@ -2,10 +2,14 @@ import React from 'react';
 
 const ConfirmationDialog = ({ onConfirm, onCancel }) => {
   return (
-    <div>
-      <p>Are you sure?</p>
-      <button onClick={onConfirm}>Yes</button>
-      <button onClick={onCancel}>No</button>
+    <div className='b-c-overlay'>
+      <div className="b-c-c-box">
+      <p className='heading-confirm' >Are you sure you want to remove?</p>
+      <div className="btn-contain-confirm">
+      <button className='btn-confirm b-1' onClick={onConfirm}>Confirm</button>
+      <button className='btn-confirm b-2' onClick={onCancel}>Cancel</button>
+      </div>
+      </div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { useSavedBooks } from "../../context/SavedBooksProvider";
 import { SoundContext } from "../../context/SoundContext";
 import { useVibration } from "../../context/VibrationContext";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 const BookCard = ({ book }) => {
   // Debugging: Check what data is coming
@@ -14,6 +15,7 @@ const BookCard = ({ book }) => {
   const isSaved = savedBooks.some((b)=> b.key === book.key);
   const { playSound } = useContext(SoundContext);
   const { handleClick } = useVibration();
+  const {darkmode} = useDarkMode();
 
   // Handle cover image fallback
   const coverUrl = book.cover_i
@@ -53,7 +55,7 @@ const BookCard = ({ book }) => {
             </motion.h3>
             <motion.i
               className={`icon-save bx ${isSaved ? "bx-bookmark-minus": "bx-bookmark"}`}
-              style={{color: isSaved ? "red": "black"}}
+              style={darkmode ? {color: isSaved ? "red": "white"}: {color: isSaved ? "red": ""}}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
