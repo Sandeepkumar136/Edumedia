@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/contents/Nav/Navbar";
 import "./components/ui/Style.css";
 import Home from "./components/pages/Home";
-import Authors from "./components/pages/Authors";
 import Categories from "./components/pages/Categories";
 import Bookmarks from "./components/pages/Bookmarks";
 import Trending from "./components/pages/Trending";
@@ -18,6 +17,8 @@ import Dialogue from "./components/dialog/Dialogue";
 import { DarkModeProvider } from "./components/context/DarkModeContext";
 import { ConfirmBoxContextProvider } from "./components/context/ConfirmBoxContext";
 import ConfirmDialogueBox from "./components/contents/others/ConfirmDialogueBox";
+import ISBNScanner from "./components/pages/ISBNScanner";
+import { BookProvider } from "./components/context/BookContext";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <DarkModeProvider>
       <DialogueBoxContextProvider>
         <ConfirmBoxContextProvider>
+          <BookProvider>
         <SoundProvider>
           <VibrationProvider>
             <SavedBooksProvider>
@@ -34,7 +36,7 @@ const App = () => {
                 <ConfirmDialogueBox/>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/auth" element={<Authors />} />
+                  <Route path="/isbn" element={<ISBNScanner />} />
                   <Route path="/categories" element={<Categories />} />
                   <Route path="/bookmarks" element={<Bookmarks />} />
                   <Route path="/trends" element={<Trending />} />
@@ -46,6 +48,7 @@ const App = () => {
             </SavedBooksProvider>
           </VibrationProvider>
         </SoundProvider>
+        </BookProvider>
         </ConfirmBoxContextProvider>
       </DialogueBoxContextProvider>
       </DarkModeProvider>
