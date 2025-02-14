@@ -1,9 +1,11 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { UseConfirmBox } from "../../context/ConfirmBoxContext";
+import { useSavedBooks } from "../../context/SavedBooksProvider";
 
 const ConfirmDialogueBox = () => {
   const { isConfirmBoxOpen, CloseConfirmBox } = UseConfirmBox();
+  const {removeAllFavorites} = useSavedBooks();
 
   const handleConfirmBox = (e) => {
     if (e.target.id === "Confirm-Box-Overlay") {
@@ -39,6 +41,7 @@ const ConfirmDialogueBox = () => {
                 className="btn-confirm b-1"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                onClick={()=> {removeAllFavorites(); CloseConfirmBox();}}
               >
                 Confirm
               </motion.button>
@@ -47,6 +50,7 @@ const ConfirmDialogueBox = () => {
                 className="btn-confirm b-2"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                onClick={CloseConfirmBox}
               >
                 Cancel
               </motion.button>

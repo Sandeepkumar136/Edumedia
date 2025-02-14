@@ -177,10 +177,10 @@ const Dialogue = () => {
             >
               <div className="setting-left-align">
                 <i className="bx bxs-heart-square"></i>
-                <span className="text-setting">Remove all <Bookmarks></Bookmarks></span>
+                <span className="text-setting">Remove all Bookmarks</span>
               </div>
               <div className="right-setting-align">
-                <button onClick={OpenConfirmBox} className="setting-btn" type="button">
+                <button onClick={()=> {OpenConfirmBox(); CloseDialogue();}} className="setting-btn" type="button">
                   Remove
                 </button>
               </div>
