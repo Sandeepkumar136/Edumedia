@@ -1212,4 +1212,38 @@
   .b-c-btn {
     font-size: 0.7rem;
   }
+}
+/* Fixed the slider at the top */
+.slider-container {
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure content is not hidden under the fixed slider */
+.content-container {
+  margin-top: 80px; /* Adjust as needed */
+}
+
+/* Slider item styling */
+.slider-item {
+  text-align: center;
+  padding: 10px;
+}
+
+.active {
+  font-weight: bold;
+  color: blue;
+  border-bottom: 2px solid blue;
+}
+
+/* Section styling */
+.section-contain {
+  padding: 100px 0;
+  min-height: 100vh;
 }/*# sourceMappingURL=Style.css.map */
