@@ -1116,38 +1116,91 @@
   }
   
 }
-// %temp%
-/* Fixed the slider at the top */
-.slider-container {
-  position: fixed;
-  top: 4.5rem;
-  left: 0;
+// About
+// Welcome
+.ab-container{
   width: 100%;
-  background: white;
-  z-index: 1000;
-  padding: 10px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100vh;
 }
-
-/* Ensure content is not hidden under the fixed slider */
-.content-container {
-  margin-top: 80px; /* Adjust as needed */
+.heading-ab{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #bf00ff, #000);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 2rem 0;
 }
-
-/* Slider item styling */
-.slider-item {
-  text-align: center;
-  padding: 10px;
+.img-w-ab{
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  height: 400px;
 }
-
-.active {
-  font-weight: bold;
-  color: blue;
-  border-bottom: 2px solid blue;
+.text-ab-w{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  font-size: 0.8rem;
 }
-
-/* Section styling */
-.section-contain {
-  padding: 100px 0;
-  min-height: 100vh;
+.about-container{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+.ab-sidebar-container{
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  z-index: 1200;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.ab-sidebar-upper-contain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #0088ff;
+}
+.ab-sidebar-toggle{
+  display: none;
+}
+.heading-ab-sidebar{
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+.ab-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  list-style: none;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+.ab-list{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+  padding: 1rem;
+  text-transform: capitalize;
+  border-radius: 9px;
+  font-weight: 500;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+}
+.ab-list.active{
+  background-color: #0088ff;
+  color: #fff;
 }

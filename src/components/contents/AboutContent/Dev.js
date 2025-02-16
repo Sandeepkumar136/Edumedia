@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dev = () => {
   return (
-    <div>
+    <div style={{width: "100%", height: "100vh"}}>
       const
     </div>
   )

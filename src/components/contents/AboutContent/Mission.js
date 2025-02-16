@@ -2,7 +2,7 @@ import React from 'react'
 
 const Mission = () => {
   return (
-    <div>
+    <div style={{width: "100%", height: "100vh"}}>
       constent
     </div>
   )
