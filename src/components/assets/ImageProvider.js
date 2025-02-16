@@ -14,6 +14,14 @@ const ImageProvider = [
   {
     welcome: require('./images/rb_2148817994.png'),
     alt: 'welcome'
+  },
+  {
+    what: require('./images/rb_2150189560.png'),
+    alt: 'what we used'
+  },
+  {
+    mission: require('./images/rb_7874.png'),
+    alt: 'mission'
   }
 ];
 export default ImageProvider;
