@@ -62,7 +62,7 @@ const About = () => {
           <Dev/>
         </section>
         <section ref={sections.touch} id='touch'>
-          <Touchwithus/>
+          {/* <Touchwithus/> */}
         </section>
       </div>
     </div>

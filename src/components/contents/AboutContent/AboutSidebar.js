@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const AboutSidebar = ({ sections, activeSections, scrollToSection }) => {
-  const [isAbSidebarOpen, setIsAbSidebarOpen] = useState(true);
+  const [isAbSidebarOpen, setIsAbSidebarOpen] = useState(false);
   const TogglSidebar = () => {
     setIsAbSidebarOpen(!isAbSidebarOpen);
   };
@@ -17,10 +17,10 @@ const AboutSidebar = ({ sections, activeSections, scrollToSection }) => {
     <>
     <div className="ab-sidebar-container">
         <div className="ab-sidebar-upper-contain">
-        <i onClick={TogglSidebar} className={`bx ab-sidebar-toggle ${isAbSidebarOpen? "bx-chevron-right": "bx-chevron-right"}`}></i>
+        <i onClick={TogglSidebar} className={`bx ab-sidebar-toggle ${isAbSidebarOpen? "bx-chevron-up": "bx-chevron-down"}`}></i>
         <p className="heading-ab-sidebar">Contents</p>
         </div>
-        <aside className={`ab-sidebar ${isAbSidebarOpen ? "open": "close"}`}></aside>
+        <aside className={`ab-sidebar ${isAbSidebarOpen ? "open": "close"}`}>
         <ul className="ab-items">
             {
                 menuItems.map((e)=>(
@@ -30,6 +30,7 @@ const AboutSidebar = ({ sections, activeSections, scrollToSection }) => {
                 ))
             }
         </ul>
+        </aside>
     </div>
     </>
   );

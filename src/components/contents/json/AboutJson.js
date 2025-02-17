@@ -51,7 +51,6 @@ const About = {
     support:
       "Your feedback and suggestions are invaluable to us! If you encounter any issues or have ideas for improvements, please reach out. Our dedicated support team is always available to assist you with technical issues, feature requests, or general inquiries.",
     get_in_touch:
-      "We’d love to hear from you! Stay connected through our official channels for updates, announcements, and support. Your input helps us grow and improve the app for an even better user experience.",
   },
 };
 export default About;
