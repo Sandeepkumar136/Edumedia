@@ -39,7 +39,7 @@ const Welcome = () => {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
-        Welcome to our Open Library App! This platform is designed for book
+        Welcome to our Open EDU media! This platform is designed for book
         lovers, researchers, and casual readers. Whether you seek a specific
         book, explore new titles, or search for online reading resources, our
         app has you covered. With seamless navigation, an intuitive interface,
