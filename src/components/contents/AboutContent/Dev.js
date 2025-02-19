@@ -1,10 +1,32 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Dev = () => {
   return (
-    <div className="dev-container">
-      <h4 className="heading-dev">For Developers</h4>
-      <div className="dev-s-container">
+    <motion.div 
+      className="dev-container"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: false }}
+    >
+      <motion.h4 
+        className="heading-dev"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: false }}
+      >
+        For Developers
+      </motion.h4>
+      
+      <motion.div 
+        className="dev-s-container"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: false }}
+      >
         <h5 className="heading-dev-s">Software Used in</h5>
         <div className="dev-s-contain">
           <div className="dev-s-card">
@@ -20,13 +42,27 @@ const Dev = () => {
             <p className="text-dev-s-card">Boxicons</p>
           </div>
         </div>
-        <div className="dese-dev">
+        
+        <motion.div 
+          className="dese-dev"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: false }}
+        >
           Developers interested in contributing or integrating similar
           functionalities can explore our open-source codebase. Our app is
           designed with modular components, making it easy to extend, modify, or
           enhance.
-        </div>
-        <ul className="dev-content">
+        </motion.div>
+        
+        <motion.ul 
+          className="dev-content"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: false }}
+        >
           <li className="dev-item">
             <span className="heading-dev-item">API Integration</span>
             <p className="text-dev-item">
@@ -40,9 +76,7 @@ const Dev = () => {
             </p>
           </li>
           <li className="dev-item">
-            <span className="heading-dev-item">
-              Component-Based Architecture
-            </span>
+            <span className="heading-dev-item">Component-Based Architecture</span>
             <p className="text-dev-item">
               Build scalable React applications with reusable components.
             </p>
@@ -67,52 +101,49 @@ const Dev = () => {
               contribute enhancements.
             </p>
           </li>
-        </ul>
+        </motion.ul>
+        
         <h5 className="heading-end">EndPoints</h5>
-        <div className="end-point-contain">
+        <motion.div 
+          className="end-point-contain"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: false }}
+        >
           <pre className="pre-endpoints">
-            <p className="heading-pre">
-              In Search
-            </p>
+            <p className="heading-pre">In Search</p>
             <code className="code-endpoints">
-            https://openlibrary.org/search.json?q=harry+potter
+              https://openlibrary.org/search.json?q=harry+potter
             </code>
           </pre>
           <pre className="pre-endpoints">
-            <p className="heading-pre">
-              In Library ID
-            </p>
+            <p className="heading-pre">In Library ID</p>
             <code className="code-endpoints">
-            https://openlibrary.org/works/OL45883W.json
+              https://openlibrary.org/works/OL45883W.json
             </code>
           </pre>
           <pre className="pre-endpoints">
-            <p className="heading-pre">
-              By ISBN
-            </p>
+            <p className="heading-pre">By ISBN</p>
             <code className="code-endpoints">
-            https://openlibrary.org/isbn/9780140328721.json
+              https://openlibrary.org/isbn/9780140328721.json
             </code>
           </pre>
           <pre className="pre-endpoints">
-            <p className="heading-pre">
-              By Author ID
-            </p>
+            <p className="heading-pre">By Author ID</p>
             <code className="code-endpoints">
-            https://openlibrary.org/authors/OL23919A.json
+              https://openlibrary.org/authors/OL23919A.json
             </code>
           </pre>
           <pre className="pre-endpoints">
-            <p className="heading-pre">
-              By Cover ID
-            </p>
+            <p className="heading-pre">By Cover ID</p>
             <code className="code-endpoints">
-            https://covers.openlibrary.org/b/id/240727-S.jpg
+              https://covers.openlibrary.org/b/id/240727-S.jpg
             </code>
           </pre>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

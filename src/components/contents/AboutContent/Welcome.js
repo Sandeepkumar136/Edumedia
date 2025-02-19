@@ -1,38 +1,42 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import ImageProvider from "../../assets/ImageProvider";
 
 const Welcome = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { triggerOnce: false, margin: "-50px" });
+
   return (
     <motion.div
+      ref={ref}
       className="ab-container"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <motion.h3 
+      <motion.h3
         className="heading-ab"
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         Welcome to EDUmedia
       </motion.h3>
-      
+
       <motion.img
         className="img-w-ab"
         src={ImageProvider[3].welcome}
         alt={ImageProvider[3].alt}
-        loading="lazy" // Native lazy loading
+        loading="lazy"
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.7, delay: 0.4 }}
       />
-      
+
       <motion.p
         className="text-ab-w"
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         Welcome to our Open Library App! This platform is designed for book
