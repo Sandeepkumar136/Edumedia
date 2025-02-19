@@ -22,6 +22,9 @@ const ImageProvider = [
   {
     mission: require('./images/rb_7874.png'),
     alt: 'mission'
+  },
+  {
+    about: require('./images/rb_2148921809.png')
   }
 ];
 export default ImageProvider;
