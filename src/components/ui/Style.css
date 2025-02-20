@@ -1910,4 +1910,34 @@ body {
     -o-border-radius: 5px;
     font-size: 0.8rem;
   }
+}
+.fav-container {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img-fav {
+  width: 300px;
+  height: 300px;
+}
+
+.heading-fav {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .fav-container {
+    height: 50vh;
+  }
+  .img-fav {
+    width: 150px;
+    height: 150px;
+  }
+  .heading-fav {
+    font-size: 0.7rem;
+  }
 }/*# sourceMappingURL=Style.css.map */

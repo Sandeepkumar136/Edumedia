@@ -25,6 +25,10 @@ const ImageProvider = [
   },
   {
     about: require('./images/rb_2148921809.png')
+  },
+  {
+    favorites: require('./images/organic-flat-feedback-concept.png'),
+    alt: 'favorites'
   }
 ];
 export default ImageProvider;
