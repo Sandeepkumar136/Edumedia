@@ -29,6 +29,10 @@ const ImageProvider = [
   {
     favorites: require('./images/organic-flat-feedback-concept.png'),
     alt: 'favorites'
+  },
+  {
+    isbn: require('./images/isbn.png'),
+    alt: 'isbn'
   }
 ];
 export default ImageProvider;

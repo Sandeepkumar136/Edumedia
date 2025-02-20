@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { BookContext } from "../context/BookContext";
 import ISBNBookCard from "../contents/ISBN/ISBNBookCard";
+import ImageProvider from "../assets/ImageProvider";
 
 const ISBNScanner = () => {
   const { books, setBooks, setLoading } = useContext(BookContext);
@@ -27,7 +28,7 @@ const ISBNScanner = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="b-c-container">
         <div className="b-c-heading-config">
           <h3 className="heading-inp-b-c">ISBN Search & Lookup</h3>
@@ -52,7 +53,26 @@ const ISBNScanner = () => {
           <ISBNBookCard key={book.id} book={book} />
         ))}
       </div>
-    </div>
+      <div className="is-container">
+        <div className="is-contents">
+          <div className="is-text-contain">
+          <h4 className="heading-is">3 Steps to Find Books by ISBN</h4>
+          <ol className="is-list">
+            <li className="is-items">Get the ISBN, various formats are supported. e.g. <span className="is-num">0073545775</span> (10-digit), <span className="is-num">9780073545776</span> (13-digit), or even with hyphens <span className="is-num">978-0-07-354577-6</span>.</li>
+            <li className="is-items">Enter or paste the ISBN into the search box and click the Search button.</li>
+            <li className="is-items">If the book is found, you will be redirected to the book details page.
+            </li>
+          </ol>
+          </div>
+          <div className="is-img-contain">
+            <img src={ImageProvider[8].isbn} alt={ImageProvider[8].alt} className="is-img" />
+          </div>
+        </div>
+        <div className="bn-faq">
+          
+        </div>
+      </div>
+    </>
   );
 };
 
