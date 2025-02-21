@@ -2008,4 +2008,71 @@ body {
   .is-img {
     width: 90%;
   }
+}
+.bn-faq {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+.heading-bn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+.question-bn {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.answer-bn {
+  width: 50%;
+  padding: 1rem;
+  opacity: 0.7;
+}
+
+.qbn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.2px solid #999;
+  margin: 1rem;
+  padding: 5rem;
+}
+
+.qbn-contain {
+  color: gray;
+  font-size: 1.2rem;
+  list-style: none;
+  text-decoration: none;
+}
+
+.isbn-full-form {
+  cursor: zoom-in;
+}
+
+@media only screen and (max-width: 768px) {
+  .heading-bn {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  .question-bn {
+    font-size: 0.9rem;
+  }
+  .answer-bn {
+    font-size: 0.7rem;
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .qbn-container {
+    padding: 1rem;
+  }
+  .qbn-contain {
+    font-size: 0.7rem;
+  }
 }/*# sourceMappingURL=Style.css.map */
