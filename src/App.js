@@ -19,6 +19,7 @@ import ConfirmDialogueBox from "./components/contents/others/ConfirmDialogueBox"
 import ISBNScanner from "./components/pages/ISBNScanner";
 import { BookProvider } from "./components/context/BookContext";
 import About from "./components/pages/About";
+import Support from "./components/pages/Support";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
                   <Route path="/bookmarks" element={<Bookmarks />} />
                   <Route path="/trends" element={<Trending />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/support" element={<Support />} />
                   <Route path="/book/:id" element={<BooksDetails />} />
                   
 

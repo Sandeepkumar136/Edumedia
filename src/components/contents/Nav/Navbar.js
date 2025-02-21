@@ -54,12 +54,15 @@ const Navbar = () => {
           <Link to="/bookmarks" className="nav-item">
             <i className="bx bx-bookmark"></i>
           </Link>
-          <li onClick={OpenDialogue} className="nav-item">
-            <i className="bx bx-cog"></i>
-          </li>
+          <Link to="/support" className="nav-item">
+            <i className="bx bx-message-square"></i>
+          </Link>
           <Link to="/about" className="nav-item">
             <i className="bx bx-info-circle"></i>
           </Link>
+          <li onClick={OpenDialogue} className="nav-item">
+            <i className="bx bx-cog"></i>
+          </li>
           <li onClick={ToggleSidebar} className="nav-item-toggle">
             <i className={`bx ${isSidebarOpen ? "bx-x" : "bx-menu"}`}></i>
           </li>
@@ -101,6 +104,12 @@ const Navbar = () => {
               <i className="bx bx-bookmark"></i>
             </span>
             <span className="text-side">Bookmarks</span>
+          </Link>
+          <Link onClick={ToggleSidebar} to="/support" className="side-item">
+            <span className="icon-side">
+              <i className="bx bx-message-square"></i>
+            </span>
+            <span className="text-side">Support</span>
           </Link>
           <Link onClick={ToggleSidebar} to="/about" className="side-item">
             <span className="icon-side">

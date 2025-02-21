@@ -162,6 +162,7 @@ body{
   backdrop-filter: blur(10.5px);
   -webkit-backdrop-filter: blur(10.5px);
   border: none;
+  overflow-y: auto;
 }
 .sidebar.open {
   transform: translateX(0);
@@ -179,6 +180,7 @@ body{
   gap: 1rem;
   width: 100%;
   list-style-position: inside;
+  overflow-y: auto;
 }
 .side-item {
   width: 100%;
@@ -198,6 +200,7 @@ body{
   -o-transition: 0.5s all ease-in;
   cursor: pointer;
   border: none;
+  overflow-y: auto;
 }
 .side-item:hover {
   background-color: #000;
