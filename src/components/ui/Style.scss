@@ -1821,3 +1821,23 @@ body{
 .is-img{
   width: 500px;
 }
+@media only screen and (max-width: 768px) {
+  .is-contents{
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .heading-is{
+    font-size: 1rem;
+    text-align: center;
+  }
+  .is-text-contain{
+    align-items: center;
+  }
+  .is-list{
+    font-size: 0.7rem;
+    
+  }
+  .is-img{
+    width: 90%;
+  }
+}
