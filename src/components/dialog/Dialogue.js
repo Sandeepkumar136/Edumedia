@@ -4,7 +4,7 @@ import Switch from "react-switch";
 import { useDarkMode } from "../context/DarkModeContext";
 import { SoundContext } from "../context/SoundContext";
 import { useVibration } from "../context/VibrationContext";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import { UseConfirmBox } from "../context/ConfirmBoxContext";
 
 const Dialogue = () => {
@@ -14,21 +14,7 @@ const Dialogue = () => {
   const { isVibrationEnabled, toggleVibration, handleClick } = useVibration();
   const { OpenConfirmBox } = UseConfirmBox();
 
-  const [settings, setSettings] = useState({
-    userScreen: false,
-    notifications: false,
-    priceAlerts: false,
-    ipTracking: false,
-    twoFactorAuth: false,
-    vibration: false,
-  });
 
-  const toggleSwitch = (settingKey) => {
-    setSettings((prevSettings) => ({
-      ...prevSettings,
-      [settingKey]: !prevSettings[settingKey],
-    }));
-  };
 
   const handleDialogueBox = (e) => {
     if (e.target.id === "dialog-box-overlay") {
@@ -115,23 +101,7 @@ const Dialogue = () => {
               </div>
             </motion.div>
 
-            {/* Switch 3: Price Alerts */}
-            <motion.div
-              className="setting-row"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="setting-left-align">
-                <i className="bx bx-moon"></i>
-                <span className="text-setting">Disable Alerts</span>
-              </div>
-              <div className="right-setting-align">
-                <Switch
-                  onChange={() => toggleSwitch("priceAlerts")}
-                  checked={settings.priceAlerts}
-                />
-              </div>
-            </motion.div>
+
 
             {/* Switch 4: Vibration Mode */}
             <motion.div

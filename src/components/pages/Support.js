@@ -248,13 +248,13 @@ const Support = () => {
               <div className="pft-three-contain">
                 <h5 className="q-pft-three">Follow us on:</h5>
                 <p className="ans-q-pft">
-                  <a href="" className="link-social-f">
+                  <a href="https://www.facebook.com/profile.php?id=100024229897494" className="link-social-f">
                     <i className="bx bxl-facebook-circle"></i>
                   </a>
-                  <a href="" className="link-social-f">
+                  <a href="https://x.com/Sandeepkumar_38" className="link-social-f">
                     <i className="bx bxl-twitter"></i>
                   </a>
-                  <a href="" className="link-social-f">
+                  <a href="https://www.instagram.com/sandeep_kumar136/" className="link-social-f">
                     <i className="bx bxl-instagram"></i>
                   </a>
                 </p>
@@ -265,7 +265,8 @@ const Support = () => {
         </>
       ) : (
         <div className="thank-you">
-          <h2>🎉 Thank You!</h2>
+          <img src={ImageProvider[11].form_submit} alt={ImageProvider[11].alt} />
+          <h2>🎉 Thank You for your interest.</h2>
           <p>
             Your message has been successfully sent. We'll get back to you soon!
           </p>

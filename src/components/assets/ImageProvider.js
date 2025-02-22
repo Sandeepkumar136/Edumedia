@@ -41,6 +41,10 @@ const ImageProvider = [
   {
     form_input_img: require('./images/placeholder-concept-illustration.png'),
     alt: 'form input'
+  },
+  {
+    form_submit: require('./images/people-are-doing-online-chatting.png'),
+    alt: 'form submit'
   }
 ];
 export default ImageProvider;

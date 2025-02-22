@@ -48,11 +48,11 @@ const Touchwithus = () => {
         transition={{ duration: 0.6, delay: 0.5 }}
         viewport={{ once: false }}
       >
-        <li><a href="#" className="links-touch"><i className='bx bxl-github'></i> <span className="touch-span">GitHub</span></a></li>
-        <li><a href="#" className="links-touch"><i className='bx bxl-facebook-circle'></i> <span className="touch-span">FaceBook</span></a></li>
-        <li><a href="#" className="links-touch"><i className='bx bxl-instagram'></i> <span className="touch-span">Instagram</span></a></li>
-        <li><a href="#" className="links-touch"><i className='bx bxl-gmail'></i> <span className="touch-span">Gmail</span></a></li>
-        <li><a href="#" className="links-touch"><i className='bx bxs-user-circle'></i> <span className="touch-span">Portfolio</span></a></li>
+        <li><a href="https://github.com/Sandeepkumar136" className="links-touch"><i className='bx bxl-github'></i> <span className="touch-span">GitHub</span></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100024229897494" className="links-touch"><i className='bx bxl-facebook-circle'></i> <span className="touch-span">FaceBook</span></a></li>
+        <li><a href="https://www.instagram.com/sandeep_kumar136/" className="links-touch"><i className='bx bxl-instagram'></i> <span className="touch-span">Instagram</span></a></li>
+        <li><a href="https://github.com/Sandeepkumar136" className="links-touch"><i className='bx bxl-gmail'></i> <span className="touch-span">Gmail</span></a></li>
+        <li><a href="https://vercel.com/sandeep-kumars-projects-7f9d3014/myportfolio" className="links-touch"><i className='bx bxs-user-circle'></i> <span className="touch-span">Portfolio</span></a></li>
       </motion.ul>
     </motion.div>
   );
