@@ -83,9 +83,12 @@ const Support = () => {
                     loading="lazy"
                   />
                 </motion.div>
-                <motion.div                   initial={{ y: 100, opacity: 0 }}
+                <motion.div
+                  initial={{ y: 100, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }} className="align-form-left-contain">
+                  transition={{ duration: 0.5 }}
+                  className="align-form-left-contain"
+                >
                   <form onSubmit={sendEmail} className="email-form">
                     <div className="form-name-content">
                       <input
@@ -162,8 +165,11 @@ const Support = () => {
               </div>
             </div>
           </motion.div>
-          <div className="pft-container" ref={pftRef} >
-            <button onClick={handleScroll} >arrow</button>
+          <div className="pft-container" ref={pftRef}>
+            <button className="btn-scroll-pft" onClick={handleScroll}>
+              <i className="bx bx-down-arrow-alt"></i>
+            </button>
+            <div className="pft-contain-all">
             <div className="pft-contain-one">
               <h5 className="heading-pft-one">Benefits of Joining EduMedia</h5>
               <ol className="pft-list-o">
@@ -190,7 +196,7 @@ const Support = () => {
                 </li>
                 <li className="pft-items-o">
                   when you fill out the form after submit the credential will be
-                  pass out in our admin mail
+                  pass out in our admin email
                 </li>
                 <li className="pft-items-o">
                   Assured users that their information is protected.
@@ -230,12 +236,12 @@ const Support = () => {
               <div className="pft-three-contain">
                 <h5 className="q-pft-three">Have questions?</h5>
                 <p className="ans-q-pft">
-                  Email us on{" "}
+                  Email us on:
                   <a
                     href="mailto:SandeepKumar136@yandex.com"
                     className="link-gmail"
-                  >
-                    Support@yandex.com
+                    >
+                    SupportEDUmedia@yandex.com
                   </a>
                 </p>
               </div>
@@ -252,6 +258,7 @@ const Support = () => {
                     <i className="bx bxl-instagram"></i>
                   </a>
                 </p>
+                    </div>
               </div>
             </div>
           </div>
