@@ -33,6 +33,14 @@ const ImageProvider = [
   {
     isbn: require('./images/isbn.png'),
     alt: 'isbn'
+  },
+  {
+    form_background: require('./images/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration.png'),
+    alt: 'form_background'
+  },
+  {
+    form_input_img: require('./images/placeholder-concept-illustration.png'),
+    alt: 'form input'
   }
 ];
 export default ImageProvider;
